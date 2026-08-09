@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6, .main-title {
     display: flex; 
     justify-content: space-between;
     align-items: center; 
-    background-color:rgba(11, 70, 80, 0.99);
+    background-color:rgba(11, 70, 80, 0.95);
 }
 
 .nav-links {
