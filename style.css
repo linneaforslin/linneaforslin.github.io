@@ -134,32 +134,47 @@ h1, h2, h3, h4, h5, h6, .main-title {
 }
 
 .webring {
-    position: absolute;
+    /* position: absolute;
     bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
+    z-index: 2; */
 
-    background-color: rgba(11, 70, 80, 0.89); 
-    backdrop-filter: blur(1px);
-    padding: 6px 16px;
-    border-radius: 50px;
+    /* background-color: rgba(11, 70, 80, 0.89); 
+    backdrop-filter: blur(1px); */
+    /* padding: 6px 16px; */
+    /* border-radius: 50px; */
 
+    position: relative;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 }
 
 .webring a {
+    position: absolute;
+    opacity: 0;
     color: #ffffff;
     text-decoration: none;
     font-size: 10px;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease-in-out;
+}
+
+.webring a:first-child {
+    left: -22px;
+}
+
+.webring a:last-child {
+    right: -22px;
+}
+
+.webring:hover a {
+    opacity: 1;
 }
 
 .webring a:hover {
     color: #F95600;
+    background-color: transparent;
 }
 
 .main-title {
