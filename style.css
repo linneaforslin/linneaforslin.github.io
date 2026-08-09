@@ -56,14 +56,15 @@ h1, h2, h3, h4, h5, h6, .main-title {
     /* border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px; */
 
-    box-shadow: 0 4px 20px rgba(11, 70, 80, 0.25);
+    /* box-shadow: 0 4px 20px rgba(11, 70, 80, 0.25); */
+    backdrop-filter: blur(1px);
 
     list-style-type: none;
 
     display: flex; 
     justify-content: space-between;
     align-items: center; 
-    background-color:#0B4650;
+    background-color:rgba(11, 70, 80, 0.99);
 }
 
 .nav-links {
@@ -107,6 +108,7 @@ h1, h2, h3, h4, h5, h6, .main-title {
     color: black;
     position: relative;
     text-align: center;
+    text-decoration: none;
 }
 
 .footer-img {
@@ -129,6 +131,35 @@ h1, h2, h3, h4, h5, h6, .main-title {
 
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); 
     z-index: 2;
+}
+
+.webring {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    background-color: rgba(11, 70, 80, 0.89); 
+    backdrop-filter: blur(1px);
+    padding: 6px 16px;
+    border-radius: 50px;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+.webring a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.webring a:hover {
+    color: #F95600;
 }
 
 .main-title {
