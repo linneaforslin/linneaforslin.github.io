@@ -99,39 +99,6 @@ h1, h2, h3, h4, h5, h6, .main-title {
     background-color: #F95600;
 }
 
-.footer {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    background: linear-gradient(to bottom, transparent 0%, #EDD0D0 40%);
-    color: black;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-}
-
-.footer-img {
-    margin-top: 16px;
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.copyright {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    
-    color: white;
-    margin: 0;
-    font-size: 14px;
-
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); 
-    z-index: 2;
-}
 
 .webring {
     /* position: absolute;
@@ -175,6 +142,40 @@ h1, h2, h3, h4, h5, h6, .main-title {
 .webring a:hover {
     color: #F95600;
     background-color: transparent;
+}
+
+.footer {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 0%, #EDD0D0 40%);
+    color: black;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+
+.footer-img {
+    margin-top: 16px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    
+    color: white;
+    margin: 0;
+    font-size: 14px;
+
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); 
+    z-index: 2;
 }
 
 .main-title {
