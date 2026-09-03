@@ -1,27 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
 /* @font-face {
   font-family: 'Melintina';
   src: url('https://raw.githubusercontent.com/Lavilight/my-fonts/main/mellintina-calligraphy.ttf') format('truetype');
 } */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face {
+/* @font-face {
   font-family: 'Croogla';
   src: url('./Croogla4F-Bold.ttf') format('truetype');
-}
+} */
 
 .external-link {
-    color: #F95600;
+    color: #2a3132;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .external-link:hover {
-    color: #0B4650;
+    color: #F95600;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #f8f7f2;
+    color: #2a3132;
     margin: 0px;
     padding: 0px;
 
@@ -31,11 +33,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .main-title {
-    font-family: serif;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
 }
 
 .orange-text {
     color: #FA5500;
+}
+
+.navy-text {
+    color: #011666;
 }
 
 #profile-picture {
@@ -45,6 +52,12 @@ h1, h2, h3, h4, h5, h6, .main-title {
     margin-left: 24px;
     margin-bottom: 0px;
 }
+
+#profile-picture img {
+    border-radius: 12px;
+}
+
+/* ------- START NAVBAR ------- */
 
 .navbar {
     position: sticky;
@@ -57,14 +70,15 @@ h1, h2, h3, h4, h5, h6, .main-title {
     border-bottom-right-radius: 6px; */
 
     /* box-shadow: 0 4px 20px rgba(11, 70, 80, 0.25); */
-    backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(50px); */
+    background-color: #f8f7f2;
 
     list-style-type: none;
 
     display: flex; 
     justify-content: space-between;
     align-items: center; 
-    background-color:rgba(11, 70, 80, 0.95);
+    /* background-color:rgba(11, 70, 80, 0.95); */
 }
 
 .nav-links {
@@ -86,74 +100,96 @@ h1, h2, h3, h4, h5, h6, .main-title {
     justify-content: center;
     height: 100%;
 
-    color: #f8f7f2;
+    color: #5f6566;
     text-align: center;
     font-size: 16px;
-    padding: 0px 16px;
+    padding: 0px 8px;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #f8f7f2;
-    background-color: #F95600;
+    color: #F95600;
+    /* background-color: #F95600; */
 }
 
-
 .webring {
-    /* position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; */
-
-    /* background-color: rgba(11, 70, 80, 0.89); 
-    backdrop-filter: blur(1px); */
-    /* padding: 6px 16px; */
-    /* border-radius: 50px; */
-
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0px;
+}
+
+.webring > a:not(.webring-icon-link) {
+    position: absolute;
+    opacity: 0;
+    color: #edffec;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.webring > a:not(.webring-icon-link):first-child {
+    left: -10px;
+}
+
+.webring > a:not(.webring-icon-link):last-child {
+    right: -10px;
+}
+
+.webring:hover > a:not(.webring-icon-link) {
+    opacity: 1;
+    color: #F95600;
+}
+
+/* 2. Force the icon wrapper link to stay visible and in layout flow */
+.webring-icon-link {
+    position: relative !important;
+    opacity: 1 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.webring-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.webring a {
-    position: absolute;
-    opacity: 0;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 10px;
-    transition: color 0.3s ease-in-out;
+.webring-icon svg {
+    width: 35px !important;
+    height: 35px !important;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.webring a:first-child {
-    left: -22px;
+.webring-icon svg path {
+    fill: #5f6566 !important;
+    transition: fill 0.25s ease;
 }
 
-.webring a:last-child {
-    right: -22px;
+.webring-icon-link:hover svg path {
+    fill: #F95600 !important;
 }
 
-.webring:hover a {
-    opacity: 1;
-}
+/* ------- END NAVBAR ------- */
 
-.webring a:hover {
-    color: #F95600;
-    background-color: transparent;
-}
+/* ------- START FOOTER ------- */
 
 .footer {
     width: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0, 0, 20px, 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, transparent 0%, #EDD0D0 40%);
-    color: black;
+    display: flex;
+    flex-direction: column;
     position: relative;
     text-align: center;
-    text-decoration: none;
+    /* background: linear-gradient(to bottom, transparent 0%, #EDD0D0 40%); */
+
 }
 
 .footer-img {
@@ -164,32 +200,40 @@ h1, h2, h3, h4, h5, h6, .main-title {
 }
 
 .copyright {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    
-    color: white;
-    margin: 0;
+    background-color: #EBE9E4; 
+    color: #2a3132;
     font-size: 14px;
 
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); 
-    z-index: 2;
+    margin: 16px, auto, 0, auto;
+    padding: 8px;
+    border-radius: 0 0 16px 16px;
+    margin-top: 0px;
+    
+    text-align: center;
+    width: 100%;
+    /* display: block;      */
+
+    /* border: 1px solid rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
 }
+
+/* ------- END FOOTER ------- */
 
 .main-title {
     /* display: block; */
     /* align-items: center; */
     /* justify-content: space-between; */
-    color: #f8f7f2;
-    font-size: 25px;
-    font-weight: bold;
+    color: #F95600;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: normal;
 }
-/* 
-.profile-picture {
-    align-items: right;
-} */
+
+.main-title a,
+.main-title a:visited {
+    color: inherit;
+    text-decoration: none;
+}
 
 .home-container {
     max-width: 700px;
@@ -247,7 +291,7 @@ h1, h2, h3, h4, h5, h6, .main-title {
 }
 
 #name {
-    color: #FA5500;
+    color: #011666;
     display: inline;
 }
 
@@ -261,31 +305,103 @@ h2 {
     margin-bottom: -10px;
 }
 
+/* ------- START PORTFOLIO ------- */
+/* Card Layout */
 .portfolio-grid {    
     column-count: 3;
-    column-gap: 16px;
-    padding: 16px;
+    column-gap: 20px;
+    padding: 24px;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-.grid-item {
+.grid-card {
     break-inside: avoid;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
-.grid-item img {
+/* Image & Overlay Wrapper */
+.card-img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-img-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 6px;
-    transition: transform 0.2s ease;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.grid-item img:hover {
-    transform: scale(1.02);
-
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    
+    /* Dark gradient fading from transparent top to dark bottom */
+    background: linear-gradient(to top, rgba(20, 24, 25, 0.85) 0%, rgba(20, 24, 25, 0.2) 60%, transparent 100%);
+    
+    display: flex;
+    justify-content: flex-start; /* Aligns text to the left */
+    align-items: flex-end;      /* Pushes text to the bottom */
+    padding: 10px;
+    box-sizing: border-box;
+    
+    /* Animation states */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* transform: translateY(4px); */
 }
+
+/* Typography & Tag */
+.card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Hover Interactions */
+.card-img-wrapper:hover .card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-img-wrapper:hover img {
+    transform: scale(1.05); /* Smooth image zoom */
+}
+
+/* ------- END PORTFOLIO ------- */
+
+
+/* ------- START RESUME ------- */
+
+.resume-container {
+    width: 100%;
+    max-width: 850px;
+    height: 100%;
+    margin: 0 auto 24px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
+}
+
+.resume-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* .resume-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+} */
+
+/* ------- END RESUME ------- */
 
 
 
