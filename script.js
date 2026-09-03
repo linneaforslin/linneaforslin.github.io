@@ -19,8 +19,6 @@ const navbar = `
     </nav>
 `;
 
-    // <img src="webring-icon.svg" width="35" height="35" alt="Webring icon" class="webring-icon"/>
-
 const footer = `
     <footer class="footer">
         <img src="img/chicken-footer.png" alt="Footer" class="footer-img">
