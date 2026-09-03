@@ -10,6 +10,14 @@
   src: url('./Croogla4F-Bold.ttf') format('truetype');
 } */
 
+html {
+    background-color: #410007;
+    /* #EDD0D0; */
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
 .external-link {
     color: #2a3132;
     text-decoration: none;
@@ -28,6 +36,15 @@ body {
     padding: 0px;
 
     min-height: 100vh;
+    max-width: 700px; 
+    width: 100%;
+
+    margin: 30px auto; 
+    border-radius: 16px;
+    overflow: hidden; /* Clips children to match the rounded box */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
 }
@@ -45,16 +62,48 @@ h1, h2, h3, h4, h5, h6, .main-title {
     color: #011666;
 }
 
+.profile-container {
+    position: relative;
+    float: right;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-left: 24px;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
 #profile-picture {
+    position: relative;
     float: right;
     margin-top: 0px;    
     margin-right: 40px;
     margin-left: 24px;
     margin-bottom: 0px;
+    z-index: 2;
 }
 
 #profile-picture img {
     border-radius: 12px;
+}
+
+.bg-braille {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%);
+    z-index: 1;
+    
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1;
+    color: #011666;
+    opacity: 0.2;
+    
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    white-space: pre;
+    user-select: none;
 }
 
 /* ------- START NAVBAR ------- */
@@ -62,10 +111,11 @@ h1, h2, h3, h4, h5, h6, .main-title {
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1;
 
     height: 50px;
     padding: 0px 16px;
+    box-sizing: border-box;
     /* border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px; */
 
@@ -78,6 +128,7 @@ h1, h2, h3, h4, h5, h6, .main-title {
     display: flex; 
     justify-content: space-between;
     align-items: center; 
+    overflow: hidden;
     /* background-color:rgba(11, 70, 80, 0.95); */
 }
 
@@ -143,7 +194,6 @@ h1, h2, h3, h4, h5, h6, .main-title {
     color: #F95600;
 }
 
-/* 2. Force the icon wrapper link to stay visible and in layout flow */
 .webring-icon-link {
     position: relative !important;
     opacity: 1 !important;
@@ -178,18 +228,15 @@ h1, h2, h3, h4, h5, h6, .main-title {
 /* ------- END NAVBAR ------- */
 
 /* ------- START FOOTER ------- */
-
 .footer {
     width: 100%;
     margin: 0;
-    padding: 0, 0, 20px, 0;
+    padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     position: relative;
     text-align: center;
-    /* background: linear-gradient(to bottom, transparent 0%, #EDD0D0 40%); */
-
 }
 
 .footer-img {
@@ -204,17 +251,14 @@ h1, h2, h3, h4, h5, h6, .main-title {
     color: #2a3132;
     font-size: 14px;
 
-    margin: 16px, auto, 0, auto;
-    padding: 8px;
-    border-radius: 0 0 16px 16px;
-    margin-top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    
+    margin: 0 auto;
+    padding: 12px 16px;
+    border-radius: 0;
     
     text-align: center;
-    width: 100%;
-    /* display: block;      */
-
-    /* border: 1px solid rgba(255, 255, 255, 0.15); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
 }
 
 /* ------- END FOOTER ------- */
@@ -240,6 +284,10 @@ h1, h2, h3, h4, h5, h6, .main-title {
     margin-left: auto;
     margin-right: auto;
     flex: 1;
+
+    padding-left: 32px; 
+    padding-right: 16px;
+    box-sizing: border-box;
 }
 
 .icons{
@@ -297,6 +345,7 @@ h1, h2, h3, h4, h5, h6, .main-title {
 
 h1 {
     font-size: 50px;
+    line-height: 0.7;
     margin-bottom: -10px;
     /* margin: 0px; */
 }
@@ -312,7 +361,9 @@ h2 {
     column-gap: 20px;
     padding: 24px;
     margin: 0 auto;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .grid-card {
