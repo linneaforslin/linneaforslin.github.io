@@ -11,7 +11,8 @@
 } */
 
 html {
-    background-color: #410007;
+    background-color: #0f152c;
+    /* background-color: #410007; */
     /* #EDD0D0; */
     margin: 0;
     padding: 0;
@@ -452,6 +453,88 @@ h2 {
 
 /* ------- END RESUME ------- */
 
+
+/* ------- START LIGHTBOX ------- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(8, 10, 11, 0.96);   /* darker; lower the last number to lighten */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    cursor: zoom-out;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-figure {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: min(100%, 500px);          /* width cap: change 800px to taste */
+    max-height: calc(100vh - 100px);
+    object-fit: contain;
+    border-radius: 4px;                   /* smaller corners */
+}
+
+.lightbox-caption {
+    margin-top: 12px;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+/* Arrows */
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.lightbox-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;                      /* thin line = more elegant */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.lightbox-btn:hover {
+    color: #F95600;                       /* matches your site's orange */
+}
+
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+.lightbox-prev:hover { transform: translateY(-50%) translateX(-4px); }
+.lightbox-next:hover { transform: translateY(-50%) translateX(4px); }
+/* ------- END LIGHTBOX ------- */
 
 
 
